@@ -213,7 +213,12 @@ Notifly는 이 값을 기준으로 사용자 이벤트를 추적하고 캠페인
   로그인 사용자 ID. 로그아웃 시 `null`로 설정하여 해제
 </ParamField>
 
-```js
+#### 유저 ID 해제 및 삭제
+
+(권장사항) 로그아웃 시에는 `setUserId(null)`을 호출하여 기기와 유저의 연결을 해지해 주세요.
+(권장사항) 회원 탈퇴 시에는 [Delete Users API](/api-reference/users-events/delete-users)를 구현하여 유저 정보를 완전히 삭제해 주세요.
+
+```JavaScript
 notifly.setUserId(userId);
 ```
 

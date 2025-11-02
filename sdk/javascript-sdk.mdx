@@ -263,6 +263,11 @@ notifly.setUserId(userId?: string | null);
   로그인 사용자 ID. 로그아웃 시 `null`로 설정하여 해제
 </ParamField>
 
+#### 유저 ID 해제 및 삭제
+
+(권장사항) 로그아웃 시에는 `setUserId(null)`을 호출하여 기기와 유저의 연결을 해지해 주세요.
+(권장사항) 회원 탈퇴 시에는 [Delete Users API](/api-reference/users-events/delete-users)를 구현하여 유저 정보를 완전히 삭제해 주세요.
+
 <Tabs>
 <Tab title="React">
 
@@ -290,7 +295,7 @@ userIdSaveButton.addEventListener("click", function () {
 </Tab>
 </Tabs>
 
-### 2. 유저 속성 설정
+### 2. 유저 프로퍼티 설정
 
 ```js
 notifly.setUserProperties(userProperties);
@@ -329,7 +334,7 @@ subscribeButton.addEventListener('click', function () {
 </Tab>
 </Tabs> 
 
-<Info> **예약/표준 속성 키(Reserved Keys)**: `$email`, `$phone_number` 등 채널 발송/개인화에 사용되는 키는 반드시 지정된 이름으로 설정하세요. </Info> <Warning> `setUserId(null)`로 등록 해지 시, 유저 속성/피로도 등 **모든 유저 데이터가 삭제**됩니다. </Warning>
+<Info> **예약/표준 속성 키(Reserved Keys)**: `$email`, `$phone_number` 등 채널 발송/개인화에 사용되는 키는 반드시 지정된 이름으로 설정하세요. </Info>
 
 ## 4. 이벤트 로깅
 
